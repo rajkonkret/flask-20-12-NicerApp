@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="2 - exchange add container and title">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/exchange.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exchange.html" afterDir="false" />
-    </list>
+    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="2 - all in exchange form" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +144,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703154658197</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="2 - exchange add form label Currency and Amount">
+      <option name="closed" value="true" />
+      <created>1703155329762</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703155329762</updated>
+    </task>
+    <task id="LOCAL-00012" summary="2 - all in exchange form">
+      <option name="closed" value="true" />
+      <created>1703155639355</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703155639355</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -159,6 +172,8 @@
     <MESSAGE value="2 - change index with containers" />
     <MESSAGE value="2 - update index with containers" />
     <MESSAGE value="2 - exchange add container and title" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 - exchange add container and title" />
+    <MESSAGE value="2 - exchange add form label Currency and Amount" />
+    <MESSAGE value="2 - all in exchange form" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 - all in exchange form" />
   </component>
 </project>

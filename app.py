@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, g
+from flask import Flask, render_template, request, flash, g, redirect, url_for
 import sqlite3
 
 app_info = {
@@ -8,13 +8,25 @@ app_info = {
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SomethingWhatICantQGuess2'
 
+
+@app.route('/history')
 def history():
     db = get_db()
     sql_command = 'select id, currency, amount, trans_date from transactions;'
     cur = db.execute(sql_command)
     transactions = cur.fetchall()
 
-    return render_template('history.html', transactions=transactions)
+    return render_template('history.html', active_menu='history', transactions=transactions)
+
+
+@app.route("/delete_transaction/<int:transaction_id>")
+def delete_transaction(transaction_id):
+    db = get_db()
+    sql_statement = 'delete from transactions where id = ?;'
+    db.execute(sql_statement, [transaction_id])
+    db.commit()
+
+    return redirect(url_for('history'))
 
 def get_db():
     if not hasattr(g, 'sqlite_db'):
@@ -68,7 +80,7 @@ class CantorOffer:
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", active_menu='home')
 
 
 @app.route("/exchange", methods=['GET', 'POST'])
@@ -77,7 +89,7 @@ def exchange():
     offer.load_offer()
 
     if request.method == 'GET':
-        return render_template('exchange.html', offer=offer)
+        return render_template('exchange.html', active_menu='exchange', offer=offer)
     else:
         flash("Debug mode in method POST")
 
@@ -102,7 +114,8 @@ def exchange():
 
             flash(f"Request to change {currency} was accepted")
 
-        return render_template('exchange_results.html', currency=currency, amount=amount,
+        return render_template('exchange_results.html', active_menu='exchange',
+                               currency=currency, amount=amount,
                                currency_info=offer.get_by_code(currency))
 
 

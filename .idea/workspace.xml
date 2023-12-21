@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="2 - add menu in base.html">
-      <change beforePath="$PROJECT_DIR$/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
-    </list>
+    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="2 - change in exchange, exchange_results" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,11 +39,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/CSComarch/PycharmProjects/flask-20-12-NicerApp/templates"
+    "last_opened_file_path": "C:/Users/CSComarch/PycharmProjects/flask-20-12-NicerApp"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\CSComarch\PycharmProjects\flask-20-12-NicerApp" />
       <recent name="C:\Users\CSComarch\PycharmProjects\flask-20-12-NicerApp\templates" />
     </key>
   </component>
@@ -105,13 +104,22 @@
       <option name="project" value="LOCAL" />
       <updated>1703151966995</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="2 - change in exchange, exchange_results">
+      <option name="closed" value="true" />
+      <created>1703152480502</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703152480502</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="2 - change from flask-bootstrap to Bootstrap" />
     <MESSAGE value="2 - add menu in base.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 - add menu in base.html" />
+    <MESSAGE value="2 - change in exchange, exchange_results" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 - change in exchange, exchange_results" />
   </component>
 </project>

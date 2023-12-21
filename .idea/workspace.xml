@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="2 - change in exchange, exchange_results" />
+    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="2 - delete accordion">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exchange.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exchange.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/exchange_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/exchange_results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703152480502</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="2 - delete accordion">
+      <option name="closed" value="true" />
+      <created>1703152948728</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703152948728</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -120,6 +133,7 @@
     <MESSAGE value="2 - change from flask-bootstrap to Bootstrap" />
     <MESSAGE value="2 - add menu in base.html" />
     <MESSAGE value="2 - change in exchange, exchange_results" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 - change in exchange, exchange_results" />
+    <MESSAGE value="2 - delete accordion" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 - delete accordion" />
   </component>
 </project>

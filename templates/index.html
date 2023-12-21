@@ -5,5 +5,20 @@
 {% endblock %}
 
 {% block content %}
-
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col d-flex justify-content-center h2">Welcome to our PIRAT-Cantor</div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-2"></div>
+    <div class="col d-flex justify-content-center"><img src="{{ url_for('static', filename='flag_pirate.png') }}"></div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-8 with-margin">Cantor Pirat &trade; registered in Luxemburg</div>
+    <div class="col-4 with-margin" style="text-align: right;">&copy; 2023</div>
+  </div>
+</div>
 {% endblock %}

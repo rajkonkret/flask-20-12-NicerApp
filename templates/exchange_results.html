@@ -4,7 +4,7 @@
     You selected {{ currency }} and amount {{ amount }}
 {% endblock %}
 
-{% block body_content %}
+{% block content %}
     {{ super() }}
 
     {% if currency_info.code != 'unknown' %}

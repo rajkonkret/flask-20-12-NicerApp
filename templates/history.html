@@ -10,7 +10,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">This entry will be deleted</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="idDeleteModalBody">
@@ -19,7 +19,7 @@
       <div class="modal-footer">
           <form action="" method="GET" id="confirmDeleteForm">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btndanger">Delete</button>
+            <button type="button" class="btn btn-danger">Delete</button>
           </form>
       </div>
     </div>
@@ -27,6 +27,17 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+     $(document).ready(function () {
+         $('.delete-confirm').click(function () {
+            var desc = $(this).attr('data-desc');
+            var url = $(this).attr('data-url');
+            $('#idDeleteModalBody').text(desc);
+            $('#confirmDeleteForm').attr("action", url);
+        });
+    });
+</script>
 
 <div class="container">
     <table class="table">
@@ -49,8 +60,14 @@
             <td>
                 <a href="#" class="btn btn-primary btn-sm" role="button">Actions...</a>
                 <a href="#" class="btn btn-success btn-sm" role="button">Edit...</a>
-                <a href="{{ url_for('delete_transaction', transaction_id=transaction.id) }}"
-                   class="btn btn-danger btn-sm" role="button">Delete...</a>
+                <a type="button" class="btn btn-danger btn-sm delete-confirm"
+                        data-bs-toggle="modal"  data-bs-target="#confirmDeleteModal"
+                        data-desc="{{ 'Delete transaction for {} {} {}'.format(transaction.amount,
+                            transaction.currency,
+                            transaction.trans_date) }}"
+                        data-url="{{ url_for('delete_transaction', transaction_id=transaction.id) }}">
+                    Delete
+                </a>
             </td>
         </tr>
         {% endfor %}

@@ -1,7 +1,34 @@
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, g
+import sqlite3
+
+app_info = {
+    'db_file': 'data/cantor.db'
+}
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SomethingWhatICantQGuess2'
+
+def history():
+    db = get_db()
+    sql_command = 'select id, currency, amount, trans_date from transactions;'
+    cur = db.execute(sql_command)
+    transactions = cur.fetchall()
+
+    return render_template('history.html', transactions=transactions)
+
+def get_db():
+    if not hasattr(g, 'sqlite_db'):
+        conn = sqlite3.connect(app_info['db_file'])
+        conn.row_factory = sqlite3.Row
+        g.sqlite_db = conn
+    return g.sqlite_db
+
+
+@app.teardown_appcontext
+def close_db(error):
+    if hasattr(g, 'sqlite_db'):
+        g.sqlite_db.close()
+        print(error)
 
 
 class Currency:
@@ -53,6 +80,11 @@ def exchange():
         return render_template('exchange.html', offer=offer)
     else:
         flash("Debug mode in method POST")
+
+        amount = 100
+        if 'amount' in request.form:
+            amount = request.form['amount']
+
         currency = 'EUR'
         if 'currency' in request.form:
             currency = request.form['currency']
@@ -61,11 +93,14 @@ def exchange():
         elif offer.get_by_code(currency) == 'unknown':
             flash(f"The selected currency is unknown and cannot be accepted")
         else:
-            flash(f"Request to change {currency} was accepted")
+            db = get_db()
+            # sql_command = "insert into transactions(currency, amount, user) values('USD', 300, 'admin');"
+            sql_command = "insert into transactions(currency, amount, user) values(?, ?, ?);"
+            # db.execute(sql_command)
+            db.execute(sql_command, [currency, amount, 'admin'])
+            db.commit()
 
-        amount = 100
-        if 'amount' in request.form:
-            amount = request.form['amount']
+            flash(f"Request to change {currency} was accepted")
 
         return render_template('exchange_results.html', currency=currency, amount=amount,
                                currency_info=offer.get_by_code(currency))

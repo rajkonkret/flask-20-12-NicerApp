@@ -200,6 +200,24 @@ def delete_user(user_name):
 
     return redirect(url_for('users'))
 
+@app.route('/edit_user/<user_name>', methods=['GET', 'POST'])
+def edit_user(user_name):
+    if not 'user' in session:
+        return redirect(url_for('login'))
+
+    db = get_db()
+    cur = db.execute('select name, email from users where name=?', [user_name])
+    user = cur.fetchone()
+    message = None
+
+    if user == None:
+        flash("No such user")
+        return redirect(url_for('users'))
+
+    if request.method == 'GET':
+        return render_template('edit_user.html', active_menu='users', user=user)
+
+
 
 
 @app.route('/init_app')

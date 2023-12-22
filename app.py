@@ -150,7 +150,7 @@ def new_user():
 
         if user['user_name'] == '':
             message = "Name cannot be empty"
-        elif user['email'] =='':
+        elif user['email'] == '':
             message = "Email cannot be empty"
         elif user['user_pass'] == '':
             message = "Password cannot be empty"
@@ -171,6 +171,35 @@ def new_user():
         else:
             flash(f"Correct error: {message}")
             return render_template('new_user.html', active_menu='users', user=user)
+
+
+@app.route('/users')
+def users():
+    if not 'user' in session:
+        return redirect(url_for('login'))
+
+    db = get_db()
+    sql_command = 'select id, name, email,is_admin,is_active from users;'
+    cur = db.execute(sql_command)
+    users = cur.fetchall()
+
+    return render_template('users.html', active_menu='users', users=users)
+
+
+@app.route("/delete_user/<user_name>")
+def delete_user(user_name):
+    if not 'user' in session:
+        return redirect(url_for('login'))
+    login = session['user']
+
+    db = get_db()
+    # <> - rożne
+    sql_statement = 'delete from users where name=? and name <> ?;'
+    db.execute(sql_statement, [user_name, login])
+    db.commit()
+
+    return redirect(url_for('users'))
+
 
 
 @app.route('/init_app')

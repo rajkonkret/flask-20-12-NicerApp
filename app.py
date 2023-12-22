@@ -1,3 +1,6 @@
+import binascii
+import hashlib
+
 from flask import Flask, render_template, request, flash, g, redirect, url_for
 import sqlite3
 from datetime import date
@@ -43,6 +46,29 @@ class CantorOffer:
             if currency.code == code:
                 return currency
         return Currency('unknown', 'unknown', 'flag_pirat.png')
+
+
+class UserPass:
+    def __init__(self, user='', password=''):
+        self.user = user
+        self.password = password
+
+    def hash_password(self):
+        os_urandom_static = b'|\x0c\xaf:\xf4\xa8\xf9\x04\xf4_\x18\xb2Za;Hf9cv\x98(\xe6IG\x068\x13-\xe2\x08\x93\xe5D\xac\xd0e>\xd3\xf9B\xfcf\x13\x95j`\xf0\x19\xdf\xe3f9tO\x9a *\xfc\xe0'
+        salt = hashlib.sha256(os_urandom_static).hexdigest().encode('ascii')
+        pwdhash = hashlib.pbkdf2_hmac('sha512', self.password.encode('utf-8'), salt, 100000)
+        pwdhash = binascii.hexlify(pwdhash)
+        return (salt + pwdhash).decode('ascii')
+
+    def verify_password(self, stored_password, provided_password):
+        salt = stored_password[:64]
+        stored_password = stored_password[64:]
+        pwdhash = hashlib.pbkdf2_hmac('sha512', provided_password.encode('utf-8'), salt.encode('utf-8'),
+                                      100000)
+        pwdhash = binascii.hexlify(pwdhash).decode('ascii')
+        return pwdhash == stored_password
+
+
 
 
 @app.route('/history')

@@ -1,4 +1,5 @@
 import sqlite3
+
 sql_connection = None
 try:
     sql_connection = sqlite3.connect('data/cantor.db')
@@ -28,3 +29,8 @@ except sqlite3.Error as e:
 finally:
     if sql_connection:
         sql_connection.close()
+
+####
+import os
+
+print(os.urandom(60))

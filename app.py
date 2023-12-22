@@ -10,6 +10,41 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'SomethingWhatICantQGuess2'
 
 
+class Currency:
+
+    def __init__(self, code, name, flag):
+        self.code = code
+        self.name = name
+        self.flag = flag
+
+    def __repr__(self):
+        return f'<Currency {self.code}>'
+
+
+class CantorOffer:
+
+    def __init__(self):
+        self.currencies = []
+        self.denied_codes = []
+
+    def load_offer(self):
+        """
+        łąduje znane nam waluty do systemu
+        :return:
+        """
+        self.currencies.append(Currency('USD', 'Dollar', 'usd.png'))
+        self.currencies.append(Currency('EUR', 'Euro', 'euro.png'))
+        self.currencies.append(Currency('JPY', 'Yen', 'yen.png'))
+        self.currencies.append(Currency('GBP', 'Pound', 'pound.png'))
+        self.denied_codes.append('USD')
+
+    def get_by_code(self, code):
+        for currency in self.currencies:
+            if currency.code == code:
+                return currency
+        return Currency('unknown', 'unknown', 'flag_pirat.png')
+
+
 @app.route('/history')
 def history():
     db = get_db()
@@ -75,8 +110,6 @@ def edit_transaction(transaction_id):
         return redirect(url_for('history'))
 
 
-
-
 def get_db():
     if not hasattr(g, 'sqlite_db'):
         conn = sqlite3.connect(app_info['db_file'])
@@ -90,41 +123,6 @@ def close_db(error):
     if hasattr(g, 'sqlite_db'):
         g.sqlite_db.close()
         print(error)
-
-
-class Currency:
-
-    def __init__(self, code, name, flag):
-        self.code = code
-        self.name = name
-        self.flag = flag
-
-    def __repr__(self):
-        return f'<Currency {self.code}>'
-
-
-class CantorOffer:
-
-    def __init__(self):
-        self.currencies = []
-        self.denied_codes = []
-
-    def load_offer(self):
-        """
-        łąduje znane nam waluty do systemu
-        :return:
-        """
-        self.currencies.append(Currency('USD', 'Dollar', 'usd.png'))
-        self.currencies.append(Currency('EUR', 'Euro', 'euro.png'))
-        self.currencies.append(Currency('JPY', 'Yen', 'yen.png'))
-        self.currencies.append(Currency('GBP', 'Pound', 'pound.png'))
-        self.denied_codes.append('USD')
-
-    def get_by_code(self, code):
-        for currency in self.currencies:
-            if currency.code == code:
-                return currency
-        return Currency('unknown', 'unknown', 'flag_pirat.png')
 
 
 @app.route("/")

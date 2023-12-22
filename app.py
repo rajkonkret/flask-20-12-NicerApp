@@ -112,6 +112,13 @@ def login():
         flash("Logon failed, try again")
         return render_template('login.html', active_menu='login')
 
+@app.route('/logout')
+def logout():
+    if 'user' in session:
+        session.pop('user', None)
+        flash("You are logged out")
+    return redirect(url_for('login'))
+
 
 @app.route('/init_app')
 def init_app():

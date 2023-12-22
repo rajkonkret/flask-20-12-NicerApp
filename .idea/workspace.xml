@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="2 - add hash_password and verrify_password">
+    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="3 - add get_random_user">
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +51,7 @@
       <recent name="C:\Users\CSComarch\PycharmProjects\flask-20-12-NicerApp\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.baza1">
+  <component name="RunManager" selected="Python.app">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="flask-20-12-NicerApp" />
       <option name="ENV_FILES" value="" />
@@ -98,8 +98,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.baza1" />
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.baza1" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +271,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703236997490</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="3 - add get_random_user">
+      <option name="closed" value="true" />
+      <created>1703237967182</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1703237967182</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -292,6 +300,7 @@
     <MESSAGE value="2 - add edit html" />
     <MESSAGE value="2 - refactor" />
     <MESSAGE value="2 - add hash_password and verrify_password" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 - add hash_password and verrify_password" />
+    <MESSAGE value="3 - add get_random_user" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 - add get_random_user" />
   </component>
 </project>

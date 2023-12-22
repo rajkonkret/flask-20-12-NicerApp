@@ -121,6 +121,20 @@ def logout():
     return redirect(url_for('login'))
 
 
+@app.route("/new_user", methods=['GET', 'POST'])
+def new_user():
+    if not 'user' in session:
+        return redirect(url_for('login'))
+
+    login = session['user']
+
+    db = get_db()
+    message = None
+    user = {}
+    if request.method == 'GET':
+        return render_template('new_user.html', active_menu='users', user=user)
+
+
 @app.route('/init_app')
 def init_app():
     db = get_db()

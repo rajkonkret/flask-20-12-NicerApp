@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="3 - add logut()">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="3 - update logut()">
+      <change afterPath="$PROJECT_DIR$/templates/new_user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -338,11 +337,18 @@
       <option name="project" value="LOCAL" />
       <updated>1703244424555</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="3 - update logut()">
+      <option name="closed" value="true" />
+      <created>1703245178029</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1703245178029</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init" />
     <MESSAGE value="2 - change from flask-bootstrap to Bootstrap" />
     <MESSAGE value="2 - add menu in base.html" />
     <MESSAGE value="2 - change in exchange, exchange_results" />
@@ -367,6 +373,7 @@
     <MESSAGE value="3 - add POST hanndling in login()" />
     <MESSAGE value="3 - update login()" />
     <MESSAGE value="3 - add logut()" />
-    <option name="LAST_COMMIT_MESSAGE" value="3 - add logut()" />
+    <MESSAGE value="3 - update logut()" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 - update logut()" />
   </component>
 </project>

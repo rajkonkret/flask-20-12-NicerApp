@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="2 - fix submit" />
+    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="2 - add edit_transaction def">
+      <change afterPath="$PROJECT_DIR$/templates/edit_transaction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cantor.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/cantor.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/history.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -213,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703230642602</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="2 - add edit_transaction def">
+      <option name="closed" value="true" />
+      <created>1703232367383</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703232367383</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -230,6 +243,7 @@
     <MESSAGE value="2 - container in exchange_results" />
     <MESSAGE value="2 - add dissmiss flash" />
     <MESSAGE value="2 - fix submit" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 - fix submit" />
+    <MESSAGE value="2 - add edit_transaction def" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 - add edit_transaction def" />
   </component>
 </project>

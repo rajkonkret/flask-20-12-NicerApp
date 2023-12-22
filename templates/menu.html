@@ -18,6 +18,13 @@
         <li class="nav-item">
           <a class="nav-link disabled" aria-disabled="true">About</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {{'active' if active_menu=='login' }}" href="{{ url_for('login') }}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{'active' if active_menu=='login' }}" href="{{ url_for('logout') }}">
+            Logout {{ session['user'] if 'user' in session }}</a>
+        </li>
       </ul>
     </div>
   </div>

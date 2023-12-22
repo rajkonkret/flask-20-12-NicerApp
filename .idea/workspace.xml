@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="3 - add POST hanndling in login()" />
+    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="3 - add logut()">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -317,7 +322,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703243839786</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="3 - update login()">
+      <option name="closed" value="true" />
+      <created>1703244167254</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1703244167254</updated>
+    </task>
+    <task id="LOCAL-00027" summary="3 - add logut()">
+      <option name="closed" value="true" />
+      <created>1703244424555</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1703244424555</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -344,6 +365,8 @@
     <MESSAGE value="3 - add login.html" />
     <MESSAGE value="3 - add login() and route" />
     <MESSAGE value="3 - add POST hanndling in login()" />
-    <option name="LAST_COMMIT_MESSAGE" value="3 - add POST hanndling in login()" />
+    <MESSAGE value="3 - update login()" />
+    <MESSAGE value="3 - add logut()" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 - add logut()" />
   </component>
 </project>

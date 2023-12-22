@@ -101,7 +101,7 @@ def login():
         user_pass = '' if "user_pass" not in request.form else request.form['user_pass']
 
     login = UserPass(user_name, user_pass)
-    login_record =  login.login_user()
+    login_record = login.login_user()
 
     if login_record != None:
         session['user'] = user_name
@@ -111,6 +111,7 @@ def login():
     else:
         flash("Logon failed, try again")
         return render_template('login.html', active_menu='login')
+
 
 @app.route('/logout')
 def logout():

@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="2 - add dissmiss flash">
-      <change afterPath="$PROJECT_DIR$/baza1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="2 - fix submit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703156200758</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="2 - fix submit">
+      <option name="closed" value="true" />
+      <created>1703230642602</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1703230642602</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -224,6 +229,7 @@
     <MESSAGE value="2 - all in exchange form" />
     <MESSAGE value="2 - container in exchange_results" />
     <MESSAGE value="2 - add dissmiss flash" />
-    <option name="LAST_COMMIT_MESSAGE" value="2 - add dissmiss flash" />
+    <MESSAGE value="2 - fix submit" />
+    <option name="LAST_COMMIT_MESSAGE" value="2 - fix submit" />
   </component>
 </project>

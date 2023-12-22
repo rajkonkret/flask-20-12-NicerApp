@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash, g, redirect, url_for
 import sqlite3
+from datetime import date
 
 app_info = {
     'db_file': 'data/cantor.db'
@@ -27,6 +28,54 @@ def delete_transaction(transaction_id):
     db.commit()
 
     return redirect(url_for('history'))
+
+
+@app.route("/edit_transaction/<int:transaction_id>", methods=['GET', 'POST'])
+def edit_transaction(transaction_id):
+    offer = CantorOffer()
+    offer.load_offer()
+    db = get_db()
+
+    if request.method == 'GET':
+        sql_statement = 'select id, currency, amount from transactions where id=?;'
+        cur = db.execute(sql_statement, [transaction_id])
+        transaction = cur.fetchone()
+
+        if transaction == None:
+            flash('No such transaction!')
+            return redirect(url_for('history'))
+        else:
+            return render_template('edit_transaction.html', transaction=transaction,
+                                   active_menu='history', offer=offer)
+    else:
+
+        amount = 100
+        if 'amount' in request.form:
+            amount = request.form['amount']
+
+        currency = 'EUR'
+        if 'currency' in request.form:
+            currency = request.form['currency']
+
+        if currency in offer.denied_codes:
+            flash(f"The currency {currency} cannot be accepted")
+        elif offer.get_by_code(currency) == 'unknown':
+            flash(f"The selected currency is unknown and cannot be accepted")
+        else:
+            sql_command = '''update transactions set
+                currency=?,
+                amount=?,
+                user=?,
+                trans_date=?
+            where id=?'''
+            db.execute(sql_command, [currency, amount, 'admin', date.today(), transaction_id])
+            db.commit()
+            flash(f"Transaction was updated")
+
+        return redirect(url_for('history'))
+
+
+
 
 def get_db():
     if not hasattr(g, 'sqlite_db'):

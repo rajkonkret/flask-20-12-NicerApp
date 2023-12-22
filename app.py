@@ -228,7 +228,7 @@ def edit_user(user_name):
             db.commit()
             flash("Email was changed")
 
-        if new_password != user['email']:
+        if new_password != '':
             user_pass = UserPass(user_name, new_password)
             sql_statement = 'update users set password=? where name=?;'
             db.execute(sql_statement, [user_pass.hash_password(), user_name])

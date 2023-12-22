@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="3 - update logut()">
-      <change afterPath="$PROJECT_DIR$/templates/new_user.html" afterDir="false" />
+    <list default="true" id="b4a13c1e-fc63-4ca9-ba2d-62999b8a5d7b" name="Changes" comment="3 - add new_user in menu">
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -345,11 +343,18 @@
       <option name="project" value="LOCAL" />
       <updated>1703245178029</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="3 - add new_user in menu">
+      <option name="closed" value="true" />
+      <created>1703246164955</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1703246164955</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2 - change from flask-bootstrap to Bootstrap" />
     <MESSAGE value="2 - add menu in base.html" />
     <MESSAGE value="2 - change in exchange, exchange_results" />
     <MESSAGE value="2 - delete accordion" />
@@ -374,6 +379,7 @@
     <MESSAGE value="3 - update login()" />
     <MESSAGE value="3 - add logut()" />
     <MESSAGE value="3 - update logut()" />
-    <option name="LAST_COMMIT_MESSAGE" value="3 - update logut()" />
+    <MESSAGE value="3 - add new_user in menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 - add new_user in menu" />
   </component>
 </project>

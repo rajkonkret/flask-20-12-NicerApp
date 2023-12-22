@@ -92,6 +92,12 @@ class UserPass:
             return None
 
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'GET':
+        return render_template('login.html', active_menu='login')
+
+
 @app.route('/init_app')
 def init_app():
     db = get_db()

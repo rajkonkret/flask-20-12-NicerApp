@@ -200,6 +200,7 @@ def delete_user(user_name):
 
     return redirect(url_for('users'))
 
+
 @app.route('/edit_user/<user_name>', methods=['GET', 'POST'])
 def edit_user(user_name):
     if not 'user' in session:
@@ -217,7 +218,24 @@ def edit_user(user_name):
     if request.method == 'GET':
         return render_template('edit_user.html', active_menu='users', user=user)
 
+    else:
+        new_email = '' if 'email' not in request.form else request.form['email']
+        new_password = '' if 'user_pass' not in request.form else request.form['user_pass']
 
+        if new_email != user['email']:
+            sql_statement = 'update users set email=? where name=?;'
+            db.execute(sql_statement, [new_email, user_name])
+            db.commit()
+            flash("Email was changed")
+
+        if new_password != user['email']:
+            user_pass = UserPass(user_name, new_password)
+            sql_statement = 'update users set password=? where name=?;'
+            db.execute(sql_statement, [user_pass.hash_password(), user_name])
+            db.commit()
+            flash("Password was changed")
+
+        return redirect(url_for('users'))
 
 
 @app.route('/init_app')

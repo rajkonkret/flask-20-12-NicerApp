@@ -3,7 +3,7 @@ import hashlib
 import random
 import string
 
-from flask import Flask, render_template, request, flash, g, redirect, url_for
+from flask import Flask, render_template, request, flash, g, redirect, url_for, session
 import sqlite3
 from datetime import date
 
@@ -95,6 +95,21 @@ class UserPass:
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
+        return render_template('login.html', active_menu='login')
+    else:
+        user_name = '' if "user_name" not in request.form else request.form['user_name']
+        user_pass = '' if "user_pass" not in request.form else request.form['user_pass']
+
+    login = UserPass(user_name, user_pass)
+    login_record = login.login_user()
+
+    if login_record != None:
+        session['user'] = user_name
+        # flash("Login succesfull, welcome {}".format(user_name))
+        flash(f"Login succesfull, welcome {user_name}")
+        return redirect(url_for('index'))
+    else:
+        flash("Logon failed, try again")
         return render_template('login.html', active_menu='login')
 
 
